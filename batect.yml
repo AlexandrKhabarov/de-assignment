@@ -10,19 +10,12 @@ containers:
         container: /root/.cache/pypoetry/virtualenvs
 
 tasks:
-  unit-test:
-    description: Unit tests
+  test:
+    description: Unit/Integration tests
     group: Test
     run:
       container: pyspark
-      entrypoint: scripts/unit-test.sh
-
-  integration-test:
-    description: Integration tests
-    group: Test
-    run:
-      container: pyspark
-      entrypoint: scripts/integration-test.sh
+      entrypoint: scripts/test.sh
 
   lint:
     description: Lint check

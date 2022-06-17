@@ -18,12 +18,22 @@ def transform(df: DataFrame) -> DataFrame:
             ),
             (
                 sf.first(Signals.item_id)
-                .over(window.orderBy(sf.col(Signals.month_id)))
+                .over(
+                    window.orderBy(
+                        sf.col(Signals.month_id),
+                        sf.col(Signals.item_id),
+                    ),
+                )
                 .alias(SignalsAgg.oldest_item_id)
             ),
             (
                 sf.first(Signals.item_id)
-                .over(window.orderBy(sf.col(Signals.month_id).desc()))
+                .over(
+                    window.orderBy(
+                        sf.col(Signals.month_id).desc(),
+                        sf.col(Signals.item_id),
+                    ),
+                )
                 .alias(SignalsAgg.newest_item_id)
             ),
         )

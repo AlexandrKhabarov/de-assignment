@@ -4,7 +4,7 @@ from de_assignment.entities import Arguments
 
 
 def parse_arguments() -> Arguments:
-    if len(sys.argv) is not 3:
+    if len(sys.argv) != 3:
         sys.exit(1)
 
     return Arguments(

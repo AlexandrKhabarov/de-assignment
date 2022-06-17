@@ -81,6 +81,20 @@ from de_assignment.transform import transform
                 (SignalsAgg.newest_item_id, st.IntegerType()): [2, 1],
             },
         ),
+        (
+            {
+                (Signals.entity_id, st.LongType()): [1, 1, 1],
+                (Signals.month_id, st.IntegerType()): [1, 1, 1],
+                (Signals.signal_count, st.IntegerType()): [1, 1, 1],
+                (Signals.item_id, st.IntegerType()): [1, 2, 3],
+            },
+            {
+                (SignalsAgg.entity_id, st.LongType()): [1],
+                (SignalsAgg.total_signals, st.IntegerType()): [3],
+                (SignalsAgg.oldest_item_id, st.IntegerType()): [1],
+                (SignalsAgg.newest_item_id, st.IntegerType()): [1],
+            },
+        ),
     ],
 )
 def test_transform(
