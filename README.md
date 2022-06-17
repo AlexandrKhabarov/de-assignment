@@ -11,14 +11,9 @@ With `batect`, the only dependencies that need to be installed:
 
 ## Run tests
 
-### Run unit tests
+### Run tests
 ```bash
-./batect unit-test
-```
-
-### Run integration tests
-```bash
-./batect integration-test
+./batect test
 ```
 
 ## Run style checks

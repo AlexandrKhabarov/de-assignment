@@ -7,11 +7,7 @@ lint:
 
 .PHONY: unit
 unit:
-	poetry run pytest tests/unit
-
-.PHONY: unit
-unit:
-	poetry run pytest tests/integration
+	poetry run pytest tests
 
 .PHONY: package
 package:
